@@ -33,9 +33,10 @@ func _process(delta):
 
 func _draw():
 	var color = Color.white if not PlayersManager.lost_conn else Color.orange
+	var mech_offset = mech.position + Vector2(0, -4)
 
-	draw_line(mech.position, drone.position, Color.black, 3, true)
-	draw_line(mech.position, drone.position, color, 1.2, true)
+	draw_line(mech_offset, drone.position, Color.black, 3, true)
+	draw_line(mech_offset, drone.position, color, 1.2, true)
 	draw_string(font, center + Vector2(0, font.size), "%sm" % float(round( PlayersManager.drone_mech_dist) / 10), color)
 
 	pass

@@ -3,6 +3,8 @@ extends Camera2D
 onready var drone = $"../Drone"
 onready var mech = $"../Mechanic"
 
+export var font = preload("res://Fonts/Roboto-Regular.tres")
+
 export var camera_speed = 4.5
 export var dist = 0
 export var min_zoom_dist = 0.75
@@ -30,8 +32,10 @@ func _process(delta):
 	pass
 
 func _draw():
-	if OS.is_debug_build():
-		draw_rect(bounding_box, Color.hotpink, false)
-		draw_line(mech.position, drone.position, Color.white, 1.2, true)
-		draw_circle(center, 3, Color.aqua)
+	var color = Color.white if not PlayersManager.lost_conn else Color.orange
+
+	draw_line(mech.position, drone.position, Color.black, 3, true)
+	draw_line(mech.position, drone.position, color, 1.2, true)
+	draw_string(font, center + Vector2(0, font.size), "%sm" % float(round( PlayersManager.drone_mech_dist) / 10), color)
+
 	pass

@@ -15,6 +15,8 @@ var acceleration = Vector2()
 
 export var direction = Direction.UP
 
+onready var mech = $"../Mechanic"
+
 func _ready():
 	$Animator.play("Fly")
 	pass
@@ -40,7 +42,14 @@ func _process(delta):
 		rotate_speed * delta
 	);
 
-	accelerate(dir.normalized() * move_speed)
+	var dist = position.distance_to(mech.position)
+	PlayersManager.drone_mech_dist = dist
+
+	if dist < PlayersManager.max_drone_dist:
+		PlayersManager.lost_conn = false
+		accelerate(dir.normalized() * move_speed)
+	else:
+		PlayersManager.lost_conn = true
 
 	velocity += acceleration
 	# warning-ignore:return_value_discarded

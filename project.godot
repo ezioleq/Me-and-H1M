@@ -13,8 +13,10 @@ config_version=4
 config/name="Me(ch) and H1M"
 config/description="A game for Godocikowy Dżem #4"
 run/main_scene="res://Scenes/Game.tscn"
+boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [debug]

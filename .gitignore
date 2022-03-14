@@ -1,4 +1,5 @@
 .vscode/
+build/
 
 # Godot-specific ignores
 .import/

@@ -4,6 +4,9 @@ onready var drone = $"../Drone"
 onready var mech = $"../Mechanic"
 
 export var camera_speed = 4.5
+export var dist = 0
+export var min_zoom_dist = 0.75
+export var max_zoom_dist = 330
 
 var bounding_box = Rect2()
 var center = Vector2()
@@ -18,6 +21,10 @@ func _process(delta):
 	center = bounding_box.position + bounding_box.size / 2
 
 	self.offset = lerp(self.offset, center, camera_speed * delta)
+	
+	dist = drone.position.distance_to(mech.position) / max_zoom_dist
+	var zoom_factor = min_zoom_dist + (1 * dist)
+	self.zoom = Vector2(zoom_factor, zoom_factor);
 
 	update()
 	pass

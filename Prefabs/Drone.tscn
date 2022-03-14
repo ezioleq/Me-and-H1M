@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Textures/drone.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Drone.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/drone_fly.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -53,3 +54,8 @@ disabled = true
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/Fly = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+max_distance = 240.0

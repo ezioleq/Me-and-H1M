@@ -22,6 +22,9 @@ func _ready():
 	pass
 
 func _process(delta):
+	if PlayersManager.battery_dead:
+		return
+	
 	var horizontal = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")
 	var vertical = Input.get_action_strength("p2_up") - Input.get_action_strength("p2_down")
 	var dir = Vector2(horizontal, -vertical)

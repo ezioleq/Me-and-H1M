@@ -1,6 +1,7 @@
 extends Area2D
 
 export var speed = 200
+export var damage = 2
 var is_from_player = false
 
 func _ready():
@@ -14,6 +15,7 @@ func _on_Bullet_body_entered(body):
 
 	if not is_from_player and is_body_player:
 		# Damage player
+		PlayersManager.damage(damage)
 		queue_free()
 	elif is_from_player and is_body_player:
 		pass

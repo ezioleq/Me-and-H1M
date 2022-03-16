@@ -41,5 +41,8 @@ func _process(delta):
 	pass
 
 func end_game():
-#	get_tree().quit(32)
+	print("Game Over!")
 	pass
+
+func damage(val):
+	mech_health -= val

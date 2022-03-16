@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export (PackedScene) var Bullet
+
 enum Direction {
 	UP = 0,
 	DOWN = 180,
@@ -7,7 +9,7 @@ enum Direction {
 	RIGHT = 90
 }
 
-export var move_speed = 20
+export var move_speed = 14
 export var rotate_speed = 10
 export var slow_down = 0.93
 var velocity = Vector2()
@@ -61,7 +63,20 @@ func _process(delta):
 	velocity *= slow_down
 	acceleration = Vector2.ZERO
 
+	if Input.is_action_just_pressed("p2_shoot"):
+		shoot()
+
 	pass
 
 func accelerate(dir):
 	acceleration += dir
+
+func shoot():
+	var b = Bullet.instance()
+	owner.add_child(b)
+	b.transform = $Muzzle.global_transform
+	# Yes
+	b.rotation = (direction - 90) * PI/180
+	print(b.rotation)
+	
+	pass

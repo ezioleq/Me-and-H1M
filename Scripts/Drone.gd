@@ -74,9 +74,9 @@ func accelerate(dir):
 func shoot():
 	var b = Bullet.instance()
 	owner.add_child(b)
+	b.is_from_player = true
 	b.transform = $Muzzle.global_transform
 	# Yes
 	b.rotation = (direction - 90) * PI/180
-	print(b.rotation)
-	
+
 	pass

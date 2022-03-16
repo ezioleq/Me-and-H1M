@@ -108,10 +108,10 @@ tracks/0/keys = {
 "values": [ 9, 10 ]
 }
 
-[node name="Mechanic" type="KinematicBody2D"]
+[node name="Mechanic" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 2 )
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." groups=["player"]]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

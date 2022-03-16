@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Textures/health-border.png" type="Texture" id=1]
+[ext_resource path="res://Textures/ShiningBar.tres" type="Texture" id=2]
+[ext_resource path="res://Shaders/ColorMod.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/color_mod = Color( 1, 0.270588, 0.270588, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/color_mod = Color( 0.447059, 0.8, 0.952941, 1 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MechHealth" type="TextureProgress" parent="."]
+material = SubResource( 1 )
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 46.0
+margin_bottom = 8.0
+value = 100.0
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+
+[node name="DroneHealth" type="TextureProgress" parent="."]
+material = SubResource( 2 )
+margin_left = 4.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+value = 100.0
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+
+[node name="HealthBorder" type="Sprite" parent="."]
+position = Vector2( 26, 9 )
+texture = ExtResource( 1 )

@@ -1,17 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Prefabs/Drone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Mechanic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=3]
+[ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 3 )
+min_zoom_dist = 1.0
 
 [node name="Drone" parent="." instance=ExtResource( 1 )]
 move_speed = 12
 
 [node name="Mechanic" parent="." instance=ExtResource( 2 )]
 position = Vector2( -25, 15 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]

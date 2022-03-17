@@ -1,5 +1,7 @@
 extends Area2D
 
+export (PackedScene) var Effect
+
 export var speed = 200
 export var damage = 2
 var is_from_player = false
@@ -17,7 +19,7 @@ func _on_Bullet_body_entered(body):
 	if not is_from_player and is_body_player:
 		# Damage player
 		PlayersManager.damage(damage)
-		queue_free()
+		destroy()
 	elif is_from_player and is_body_player:
 		# Player's bullet ignores other player
 		pass
@@ -28,10 +30,16 @@ func _on_Bullet_body_entered(body):
 		# Player's bullet damage enemy
 		if body.has_method("damage"):
 			body.damage(damage)
-			queue_free()
+			destroy()
 			pass
 	else:
-		queue_free()
+		destroy()
+
+func destroy():
+	var e = Effect.instance()
+	e.position = position
+	get_tree().root.get_child(0).add_child(e)
+	self.queue_free()
 
 func _on_Timer_timeout():
 	queue_free()

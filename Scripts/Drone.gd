@@ -78,5 +78,6 @@ func shoot():
 	b.transform = $Muzzle.global_transform
 	# Yes
 	b.rotation = (direction - 90) * PI/180
+	$ShootPlayer.play()
 
 	pass

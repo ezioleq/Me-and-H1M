@@ -109,6 +109,7 @@ tracks/0/keys = {
 }
 
 [node name="Mechanic" type="KinematicBody2D" groups=["player"]]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Collision" type="CollisionShape2D" parent="." groups=["player"]]

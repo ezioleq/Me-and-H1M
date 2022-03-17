@@ -5,6 +5,7 @@ export (PackedScene) var Bullet
 var rng = RandomNumberGenerator.new()
 
 export var health = 10
+export var score_for_kill = 10
 
 export var shoot_dist = 60
 export var shoot_rate = 1
@@ -73,5 +74,6 @@ func damage(val):
 	health -= val
 
 func destroy():
+	PlayersManager.score += score_for_kill
 	queue_free()
 	pass

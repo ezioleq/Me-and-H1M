@@ -4,8 +4,10 @@ export (PackedScene) var Bullet
 
 var rng = RandomNumberGenerator.new()
 
+export var health = 10
+
 export var shoot_dist = 60
-export var shoot_rate = 0.75
+export var shoot_rate = 1
 export var shoot_bias = 0.25
 var poor_shoot_timer = 0
 
@@ -51,6 +53,9 @@ func _process(delta):
 		shoot()
 		poor_shoot_timer = 0
 
+	if health <= 0:
+		destroy()
+
 	pass
 
 func accelerate(dir):
@@ -62,4 +67,11 @@ func shoot():
 	b.position = self.global_position
 	b.rotation = rotation
 	$ShootPlayer.play()
+	pass
+
+func damage(val):
+	health -= val
+
+func destroy():
+	queue_free()
 	pass

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (PackedScene) var Bullet
+export (PackedScene) var Effect
 
 var rng = RandomNumberGenerator.new()
 
@@ -75,5 +76,8 @@ func damage(val):
 
 func destroy():
 	PlayersManager.score += score_for_kill
+	var e = Effect.instance()
+	e.position = position
+	get_tree().root.get_child(0).add_child(e)
 	queue_free()
 	pass

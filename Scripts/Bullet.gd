@@ -19,6 +19,8 @@ func _on_Bullet_body_entered(body):
 		queue_free()
 	elif is_from_player and is_body_player:
 		pass
+	elif not is_from_player and body.is_in_group("enemy"):
+		pass
 	else:
 		queue_free()
 

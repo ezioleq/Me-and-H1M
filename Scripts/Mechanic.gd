@@ -67,6 +67,8 @@ func _process(delta):
 	velocity *= slow_down
 	acceleration = Vector2.ZERO
 
+	PlayersManager.mech_pos = position
+
 	pass
 
 func accelerate(dir):

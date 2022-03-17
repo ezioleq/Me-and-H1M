@@ -2,7 +2,7 @@ extends Node
 
 var score = 0
 
-var mech_health = 100
+var mech_health = 300
 var drone_health = 30
 
 var drone_mech_dist = 0
@@ -16,6 +16,8 @@ var energy_max = drone_health
 
 var poor_score_timer = 0
 export var score_per_sec = 1
+
+var mech_pos = Vector2()
 
 func _ready():
 	pass

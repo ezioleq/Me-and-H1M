@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/drone.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Drone.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/drone_fly.wav" type="AudioStream" id=3]
 [ext_resource path="res://Prefabs/Bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sounds/shoot.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/shutdown.mp3" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -65,5 +66,8 @@ max_distance = 240.0
 
 [node name="ShootPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+
+[node name="ShutdownPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [node name="Muzzle" type="Position2D" parent="."]

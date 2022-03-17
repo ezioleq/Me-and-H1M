@@ -16,6 +16,7 @@ var velocity = Vector2()
 var acceleration = Vector2()
 
 export var direction = Direction.UP
+var discharged = false
 
 onready var mech = $"../Mechanic"
 
@@ -25,6 +26,11 @@ func _ready():
 
 func _process(delta):
 	if PlayersManager.battery_dead:
+		if not discharged:
+			$ShutdownPlayer.play()
+			$AudioPlayer.stop()
+			$Animator.stop()
+		discharged = true
 		return
 	
 	var horizontal = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")

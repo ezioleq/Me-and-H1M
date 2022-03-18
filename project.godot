@@ -98,6 +98,7 @@ common/enable_pause_aware_picking=true
 
 threads/thread_model=0
 misc/lossless_compression/webp_compression_level=0
+environment/default_clear_color=Color( 0.305882, 0.364706, 0.419608, 1 )
 environment/default_environment="res://default_env.tres"
 
 [world]

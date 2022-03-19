@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Me(ch) and H1M"
 config/description="A game for Godocikowy Dżem #4"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -35,7 +35,7 @@ window/size/test_width=960
 window/size/test_height=540
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [input]
 

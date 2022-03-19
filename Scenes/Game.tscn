@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Prefabs/Drone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Mechanic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=3]
 [ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/WaveManager.gd" type="Script" id=5]
 [ext_resource path="res://Prefabs/SpawnOrb.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
+
+[node name="WaveManager" type="Node2D" parent="."]
+script = ExtResource( 5 )
+Enemy = ExtResource( 6 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
@@ -22,18 +27,3 @@ position = Vector2( -25, 15 )
 [node name="Canvas" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="Canvas" instance=ExtResource( 4 )]
-
-[node name="SpawnOrb" parent="." instance=ExtResource( 6 )]
-position = Vector2( -68, 29 )
-
-[node name="SpawnOrb2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -91, -29 )
-
-[node name="SpawnOrb3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -36, -51 )
-
-[node name="SpawnOrb4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 18, -52 )
-
-[node name="SpawnOrb5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 75, -30 )

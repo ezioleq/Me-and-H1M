@@ -69,7 +69,9 @@ volume_db = -5.0
 pitch_scale = 0.9
 autoplay = true
 max_distance = 120.0
+bus = "SFX"
 
 [node name="ShootPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 max_distance = 200.0
+bus = "SFX"

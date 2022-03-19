@@ -42,5 +42,6 @@ autostart = true
 stream = ExtResource( 2 )
 autoplay = true
 max_distance = 240.0
+bus = "SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

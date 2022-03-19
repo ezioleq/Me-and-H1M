@@ -63,11 +63,14 @@ anims/RESET = SubResource( 3 )
 stream = ExtResource( 3 )
 autoplay = true
 max_distance = 240.0
+bus = "SFX"
 
 [node name="ShootPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [node name="ShutdownPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="Muzzle" type="Position2D" parent="."]

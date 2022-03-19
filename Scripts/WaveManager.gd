@@ -5,6 +5,7 @@ export (PackedScene) var Enemy
 var current_wave = 0
 var timer = 0
 var wave_length = 0
+var current_enemies_count = 0
 
 export var spawn_dist = 200
 export var spawn_bias = 100
@@ -19,7 +20,8 @@ func _process(delta):
 	timer += delta
 
 	if timer >= wave_length:
-		spawn_enemies(new_wave())
+		new_wave()
+		spawn_enemies(current_enemies_count)
 		current_wave += 1
 		timer = 0
 
@@ -30,9 +32,10 @@ func new_wave():
 		current_wave - rng.randf_range(0, current_wave * (current_wave % 3) * rng.randf())
 	)
 	var duration = int(enemies * 1.25) + rng.randi_range(0, 4)
-	
+
+	current_enemies_count = enemies
 	wave_length = duration
-	return enemies
+	pass
 
 func spawn_enemy(pos: Vector2):
 	var e = Enemy.instance()

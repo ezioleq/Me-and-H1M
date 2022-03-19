@@ -4,7 +4,7 @@
 [ext_resource path="res://Prefabs/Mechanic.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=3]
 [ext_resource path="res://Prefabs/HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/SpawnOrb.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 
@@ -23,20 +23,17 @@ position = Vector2( -25, 15 )
 
 [node name="HUD" parent="Canvas" instance=ExtResource( 4 )]
 
-[node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( -38, -58 )
+[node name="SpawnOrb" parent="." instance=ExtResource( 6 )]
+position = Vector2( -68, 29 )
 
-[node name="Enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( -111, 19 )
+[node name="SpawnOrb2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -91, -29 )
 
-[node name="Enemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( -125, -18 )
+[node name="SpawnOrb3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -36, -51 )
 
-[node name="Enemy4" parent="." instance=ExtResource( 5 )]
-position = Vector2( -92, -54 )
+[node name="SpawnOrb4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 18, -52 )
 
-[node name="Enemy5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 13, -58 )
-
-[node name="Enemy6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 60, -38 )
+[node name="SpawnOrb5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 75, -30 )

@@ -65,7 +65,7 @@ func accelerate(dir):
 
 func shoot():
 	var b = Bullet.instance()
-	owner.add_child(b)
+	get_tree().root.get_child(0).add_child(b)
 	b.position = self.global_position
 	b.rotation = rotation
 	$ShootPlayer.play()

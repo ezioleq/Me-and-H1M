@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sounds/Music/main_menu.wav" type="AudioStream" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular-Score.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Game.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Textures/background.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 3 )
@@ -18,6 +19,18 @@ margin_bottom = 180.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
+
+[node name="Logo" type="TextureRect" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -68.0
+margin_right = 112.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
 
 [node name="SFX" type="HSlider" parent="Control"]
 anchor_left = 0.5
@@ -88,6 +101,18 @@ margin_bottom = 4.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Exit"
+
+[node name="Credits" type="Label" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -16.0
+margin_right = 78.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Game by Ezioleq
+Music by liquidev"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

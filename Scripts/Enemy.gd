@@ -2,11 +2,13 @@ extends KinematicBody2D
 
 export (PackedScene) var Bullet
 export (PackedScene) var Effect
+export (PackedScene) var Battery
 
 var rng = RandomNumberGenerator.new()
 
 export var health = 10
 export var score_for_kill = 10
+export var battery_drop_chance = 0.45
 
 export var shoot_dist = 60
 export var shoot_rate = 1
@@ -76,8 +78,15 @@ func damage(val):
 
 func destroy():
 	PlayersManager.score += score_for_kill
+
 	var e = Effect.instance()
 	e.position = position
 	get_tree().root.get_child(1).add_child(e)
+
+	if rng.randf() <= battery_drop_chance:
+		var b = Battery.instance()
+		b.position = position
+		get_tree().root.get_child(1).add_child(b)
+
 	queue_free()
 	pass

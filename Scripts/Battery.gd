@@ -4,8 +4,8 @@ var player_in: bool = false
 var using: bool = false
 
 var timer = 0
-export var time_to_pick = 3
-export var energy_added = 5
+export var time_to_pick = 2
+export var energy_added = 6
 
 func _ready():
 	$ProgressBar.visible = false

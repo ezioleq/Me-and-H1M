@@ -28,6 +28,10 @@ func _process(delta):
 	var zoom_factor = min_zoom_dist + (1 * dist)
 	self.zoom = Vector2(zoom_factor, zoom_factor);
 
+	if Input.is_action_just_released("ui_cancel"):
+		get_tree().root.get_child(1).queue_free()
+		get_tree().change_scene("res://Scenes/Menu.tscn")
+
 	update()
 	pass
 

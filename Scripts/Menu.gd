@@ -3,6 +3,8 @@ extends Node2D
 export (PackedScene) var GameScene
 
 func _ready():
+	PlayersManager.set_script(null)
+	PlayersManager.set_script(preload("res://Scripts/PlayersManager.gd"))
 	pass
 
 func _on_SFX_value_changed(value):
@@ -14,7 +16,9 @@ func _on_Music_value_changed(value):
 	pass
 
 func _on_Play_pressed():
-	get_tree().change_scene_to(GameScene)
+	var s = GameScene.instance()
+	get_tree().root.add_child(s)
+	get_tree().change_scene_to(s)
 	pass
 
 func _on_Exit_pressed():

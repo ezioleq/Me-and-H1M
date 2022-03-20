@@ -40,7 +40,7 @@ func new_wave():
 func spawn_enemy(pos: Vector2):
 	var e = Enemy.instance()
 	e.position = pos
-	get_tree().root.get_child(0).add_child(e)
+	get_tree().root.get_child(1).add_child(e)
 	pass
 
 func spawn_enemies(count):

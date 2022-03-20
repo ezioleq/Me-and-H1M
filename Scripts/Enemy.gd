@@ -65,7 +65,7 @@ func accelerate(dir):
 
 func shoot():
 	var b = Bullet.instance()
-	get_tree().root.get_child(0).add_child(b)
+	get_tree().root.get_child(1).add_child(b)
 	b.position = self.global_position
 	b.rotation = rotation
 	$ShootPlayer.play()
@@ -78,6 +78,6 @@ func destroy():
 	PlayersManager.score += score_for_kill
 	var e = Effect.instance()
 	e.position = position
-	get_tree().root.get_child(0).add_child(e)
+	get_tree().root.get_child(1).add_child(e)
 	queue_free()
 	pass

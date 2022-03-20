@@ -9,7 +9,7 @@ func _ready():
 func _on_Timer_timeout():
 	var e = Enemy.instance()
 	e.position = position
-	get_tree().root.get_child(0).add_child(e)
+	get_tree().root.get_child(1).add_child(e)
 	pass
 
 

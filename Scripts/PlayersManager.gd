@@ -20,7 +20,7 @@ var poor_score_timer = 0
 export var score_per_sec = 1
 
 var poor_lose_timer = 0
-export var health_lose_per_sec = 15
+export var health_lose_per_sec = 30
 
 var mech_pos = Vector2()
 
@@ -42,13 +42,13 @@ func _process(delta):
 	if drone_health <= 0:
 		battery_dead = true
 
-	if drone_health > drone_max_health:
-		drone_health = drone_max_health
-
 		poor_lose_timer += delta
 		if poor_lose_timer >= 1:
 			mech_health -= health_lose_per_sec
 			poor_lose_timer = 0
+
+	if drone_health > drone_max_health:
+		drone_health = drone_max_health
 
 	if mech_health <= 0:
 		mech_dead = true

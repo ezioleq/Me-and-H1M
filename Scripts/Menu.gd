@@ -5,6 +5,7 @@ export (PackedScene) var GameScene
 func _ready():
 	PlayersManager.set_script(null)
 	PlayersManager.set_script(preload("res://Scripts/PlayersManager.gd"))
+	Engine.time_scale = 1
 	pass
 
 func _on_SFX_value_changed(value):

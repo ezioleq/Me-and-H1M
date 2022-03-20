@@ -19,6 +19,9 @@ func _ready():
 	pass
 
 func _process(delta):
+	if PlayersManager.mech_dead:
+		return
+
 	var horizontal = Input.get_action_strength("p1_right") - Input.get_action_strength("p1_left")
 	var vertical = Input.get_action_strength("p1_up") - Input.get_action_strength("p1_down")
 	var dir = Vector2(horizontal, -vertical)

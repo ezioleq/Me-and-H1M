@@ -10,6 +10,7 @@ var drone_mech_dist = 0
 var max_drone_dist = 140
 var lost_conn = false
 var battery_dead = false
+var mech_dead = false
 
 var poor_energy_timer = 0
 export var energy_per_sec = 1
@@ -50,12 +51,13 @@ func _process(delta):
 			poor_lose_timer = 0
 
 	if mech_health <= 0:
+		mech_dead = true
 		end_game()
 
 	pass
 
 func end_game():
-	print("Game Over!")
+	Engine.time_scale = 0.1
 	pass
 
 func damage(val):

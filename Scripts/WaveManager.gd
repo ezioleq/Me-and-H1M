@@ -14,6 +14,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
+	PlayersManager.score = 0
 	pass
 
 func _process(delta):

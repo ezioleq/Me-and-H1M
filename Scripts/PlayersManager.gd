@@ -4,6 +4,7 @@ var score = 0
 
 var mech_health = 300
 var drone_health = 30
+var drone_max_health = 30
 
 var drone_mech_dist = 0
 var max_drone_dist = 140
@@ -39,7 +40,10 @@ func _process(delta):
 
 	if drone_health <= 0:
 		battery_dead = true
-		
+
+	if drone_health > drone_max_health:
+		drone_health = drone_max_health
+
 		poor_lose_timer += delta
 		if poor_lose_timer >= 1:
 			mech_health -= health_lose_per_sec
